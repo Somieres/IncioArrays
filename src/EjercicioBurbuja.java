@@ -25,8 +25,5 @@ public class EjercicioBurbuja {
             System.out.println(numerous[i]);
         }
 
-
-
-
     }
 }
