@@ -31,7 +31,7 @@ public class Main {
 
         Cuenta cuenta2=new Cuenta("Juan Fernandez Rubio", "123456788901234567890",1.75,300);
 
-        Cuenta cuenta3 = new Cuenta();
+        Cuenta cuenta3 = new Cuenta(cuenta1);
 
         System.out.println("Datos cuenta1");
         System.out.println("Nombre del titular: "+cuenta1.getNombreCliente());
