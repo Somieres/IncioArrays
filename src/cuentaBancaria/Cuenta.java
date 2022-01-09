@@ -11,41 +11,48 @@ public class Cuenta {
     private double saldo;
 
 
-
-
     public Cuenta() {
 
-        nombreCliente=" ";
-        numeroCuenta=" ";
-        tipoInteres= 0;
-        saldo= 0;
+
     }
 
 
-       // Constructor con los parametros
+    // Constructor con los parametros
 
-   public Cuenta(String nombreCliente, String numeroCuenta, double tipoInteres, double saldo){
+    public Cuenta(String nombreCliente, String numeroCuenta, double tipoInteres, double saldo) {
 
-        this.nombreCliente=nombreCliente;
-        this.numeroCuenta=numeroCuenta;
-        this.tipoInteres=tipoInteres;
-        this.saldo=saldo;
+        this.nombreCliente = nombreCliente;
+        this.numeroCuenta = numeroCuenta;
+        this.tipoInteres = tipoInteres;
+        this.saldo = saldo;
+    }
+
+    // Constructor copia
+    public Cuenta(Cuenta cuenta) {
+
+        this.nombreCliente = cuenta.nombreCliente;
+        this.numeroCuenta = cuenta.numeroCuenta;
+        this.tipoInteres = cuenta.tipoInteres;
+        this.saldo = cuenta.saldo;
     }
 
 
-
-    public void setNombre (String nombreCliente){
-        this.nombreCliente=nombreCliente;
+    public void setNombre(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
     }
-    public String getNombreCliente(){
+
+    public String getNombreCliente() {
 
         return nombreCliente;
     }
-    public void setNumeroCuenta(String numeroCuenta){
-        this.numeroCuenta=numeroCuenta;
+
+    public void setNumeroCuenta(String numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
     }
-    public String getNumeroCuenta(){
-        return numeroCuenta;}
+
+    public String getNumeroCuenta() {
+        return numeroCuenta;
+    }
 
     public void setTipoInteres(double tipoInteres) {
         this.tipoInteres = tipoInteres;
@@ -63,10 +70,53 @@ public class Cuenta {
         return saldo;
     }
 
-    public double realizarIngreso(){
-        double aporte=4000;
 
-        saldo = saldo + aporte;
-        return saldo;
+    public boolean realizarIngreso(double cantidad) {
+
+
+        boolean realizado;
+
+        if (cantidad < 0) {
+
+            realizado = false;
+
+        } else{
+
+         realizado = true;
+
+        saldo = saldo + cantidad;
+         }
+
+        return realizado;
+    }
+
+    public boolean realizarReintegro(double cantidad) {
+
+        boolean aceptada;
+
+        if (saldo>0 && cantidad<=saldo && cantidad>0){
+            aceptada=true;
+            saldo=saldo-cantidad;
+        }else{
+            aceptada=false;
+        }
+        return aceptada;
+    }
+
+    public boolean realizarTransferencia(Cuenta cuentaDestino, double importe){
+
+        boolean aceptada;
+
+        if (saldo>=importe && importe>0){
+
+            aceptada=true;
+
+            cuentaDestino.saldo= cuentaDestino.saldo+importe;
+
+            saldo=saldo-importe;
+        }else {
+            aceptada=false;
+        }
+            return aceptada;
     }
 }
