@@ -13,7 +13,7 @@ public class Cuenta {
 
     public Cuenta() {
 
-fgjsdgsf
+
     }
 
 
@@ -28,16 +28,16 @@ fgjsdgsf
     }
 
     // Constructor copia
+
     public Cuenta(Cuenta cuenta) {
 
-        this.nombreCliente = cuenta.nombreCliente;
-        this.numeroCuenta = cuenta.numeroCuenta;
-        this.tipoInteres = cuenta.tipoInteres;
-        this.saldo = cuenta.saldo;
+        this.nombreCliente = cuenta.getNombreCliente();
+        this.numeroCuenta = cuenta.getNumeroCuenta();
+        this.tipoInteres = cuenta.getTipoInteres();
+        this.saldo = cuenta.getSaldo();
     }
 
-
-    public void setNombre(String nombreCliente) {
+     public void setNombre(String nombreCliente) {
         this.nombreCliente = nombreCliente;
     }
 
@@ -73,8 +73,7 @@ fgjsdgsf
 
     public boolean realizarIngreso(double cantidad) {
 
-
-        boolean realizado;
+         boolean realizado;
 
         if (cantidad < 0) {
 
@@ -84,7 +83,7 @@ fgjsdgsf
 
          realizado = true;
 
-        saldo = saldo + cantidad;
+        this.saldo += cantidad;
          }
 
         return realizado;
@@ -94,9 +93,9 @@ fgjsdgsf
 
         boolean aceptada;
 
-        if (saldo>0 && cantidad<=saldo && cantidad>0){
+        if (this.saldo>0 && cantidad<=this.saldo && cantidad>0){
             aceptada=true;
-            saldo=saldo-cantidad;
+            this.saldo-=cantidad;
         }else{
             aceptada=false;
         }
@@ -113,7 +112,7 @@ fgjsdgsf
 
             cuentaDestino.saldo= cuentaDestino.saldo+importe;
 
-            saldo=saldo-importe;
+            this.saldo-=importe;
         }else {
             aceptada=false;
         }
