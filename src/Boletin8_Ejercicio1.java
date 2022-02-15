@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Boletin8_Ejercicio1 {
 /*
 Ejercicio 1.- Implementa una clase de utilidad donde se contemplen funcionalidades como:
@@ -16,7 +18,13 @@ repetidos.
 
     public static void main(String[] args) {
 
-        int[] array=new int[10];
+        Scanner sc=new Scanner(System.in);
+
+
+        System.out.println("¿Cuantos elementos quiere introducir en el array?");
+        int numeroElementos=sc.nextInt();
+
+        int[] array=new int[numeroElementos];
 
         System.out.println("Introducimos los numeros aleatoriamente");
 
