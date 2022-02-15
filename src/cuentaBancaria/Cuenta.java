@@ -30,10 +30,10 @@ public class Cuenta {
     // Constructor copia
     public Cuenta(Cuenta cuenta) {
 
-        this.nombreCliente = cuenta.nombreCliente;
-        this.numeroCuenta = cuenta.numeroCuenta;
-        this.tipoInteres = cuenta.tipoInteres;
-        this.saldo = cuenta.saldo;
+        this.nombreCliente = cuenta.getNombreCliente();
+        this.numeroCuenta = cuenta.getNumeroCuenta();
+        this.tipoInteres = cuenta.getTipoInteres();
+        this.saldo = cuenta.getSaldo();
     }
 
 
