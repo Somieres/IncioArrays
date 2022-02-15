@@ -28,6 +28,7 @@ public class Cuenta {
     }
 
     // Constructor copia
+
     public Cuenta(Cuenta cuenta) {
 
         this.nombreCliente = cuenta.getNombreCliente();
@@ -36,8 +37,7 @@ public class Cuenta {
         this.saldo = cuenta.getSaldo();
     }
 
-
-    public void setNombre(String nombreCliente) {
+     public void setNombre(String nombreCliente) {
         this.nombreCliente = nombreCliente;
     }
 
@@ -73,8 +73,7 @@ public class Cuenta {
 
     public boolean realizarIngreso(double cantidad) {
 
-
-        boolean realizado;
+         boolean realizado;
 
         if (cantidad < 0) {
 
@@ -84,7 +83,7 @@ public class Cuenta {
 
          realizado = true;
 
-        saldo = saldo + cantidad;
+        this.saldo += cantidad;
          }
 
         return realizado;
@@ -94,9 +93,9 @@ public class Cuenta {
 
         boolean aceptada;
 
-        if (saldo>0 && cantidad<=saldo && cantidad>0){
+        if (this.saldo>0 && cantidad<=this.saldo && cantidad>0){
             aceptada=true;
-            saldo=saldo-cantidad;
+            this.saldo-=cantidad;
         }else{
             aceptada=false;
         }
@@ -113,7 +112,7 @@ public class Cuenta {
 
             cuentaDestino.saldo= cuentaDestino.saldo+importe;
 
-            saldo=saldo-importe;
+            this.saldo-=importe;
         }else {
             aceptada=false;
         }
