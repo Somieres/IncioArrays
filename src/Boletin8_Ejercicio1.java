@@ -52,9 +52,17 @@ forma que no se repita ningún elemento.
         int variable=0;
         boolean repetido=false;
 
+        /**
+         * introducimos el valor del random en la variable 'variable', para poder recorrer el array de nuevo
+         * sin la necesidad de tener un array de dos dimensiones
+         */
         for (int i=0;i<array2.length;i++){
             variable=(int)(1+Math.random()*10);
-
+/**
+ * para j=0, mientras que sea menor o igual a i, es decir la posicion que ocupa la 'i' en el array
+ *  aumentamos
+ *
+ */
             for (int j = 0; j <= i && repetido==false; j++) {
 
                 if (variable == array2[j]) {
@@ -65,6 +73,8 @@ forma que no se repita ningún elemento.
                    array2[i] = variable;
                     System.out.print(array2[i]+ ", ");
                 }
+                // le restamos una posicion, para cuando entre en el if, no imprima un cero, sino que
+                // vuelva a la misma posicion y le asigne un valor
                 else {repetido=false;
                 i--;}
 
