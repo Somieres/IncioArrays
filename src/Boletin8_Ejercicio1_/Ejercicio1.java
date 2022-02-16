@@ -1,0 +1,136 @@
+package Boletin8_Ejercicio1_;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Ejercicio1 {
+
+    static Scanner sc=new Scanner(System.in);
+
+    public static int introducirElementos(){
+
+        System.out.println("Introduzca el numero de elementos que desea almacenar en el array");
+
+        return sc.nextInt();
+    }
+
+
+    public static int[] crearRandom() {
+
+        int[] valores = new int[introducirElementos()];
+
+        for (int i = 0; i < valores.length; i++) {
+            valores[i] = (int) (Math.random() * 10);
+
+        }
+        return valores;
+    }
+
+
+/*
+lo que quiero hacer aqui es que devuelva los valores pares, pero los impares aparecen como 0, por lo que tengo que
+averiguar como no almacenar los impares como 0
+  */
+    /* public static int[] devolverPar(){
+        int [] par=crearRandom();
+        int [] valores=new int[par.length];
+      System.out.println(Arrays.toString(par));
+        for (int i=0; i<par.length;i++)
+        if (par[i]%2==0){
+             valores [i] = par[i];
+        }
+             return valores;
+    }*/
+
+    public static void devolverPares(int [] array) {
+
+        int contador=0;
+        System.out.println("Los numeros aleatorios son: "+Arrays.toString(array)+ ", ");
+        System.out.print("Los numeros ordenados por pares son: ");
+
+        for (int i=0; i<array.length;i++)
+
+            if (array[i]%2==0){
+                System.out.print(array[i]+ ", ");
+                contador++;
+            }
+        System.out.println(System.lineSeparator()+"Hay un total de: "+ contador+ " numeros pares");
+    }
+        /*  Crear un array de 20 elementos, con números aleatorios comprendidos entre 100 y 300, de
+    forma que no se repita ningún elemento.*/
+
+    /**
+     * Metodeo para crear un array en el que si se repite un numero sea elmiminado y
+     * se cree otro en su lugar
+     */
+    public static void crearArray20(){
+
+        int [] valores=new int [20];
+        int variable=0;
+        boolean repetido=false;
+
+        for (int i=0;i< valores.length;i++){
+            variable=(int)(100+Math.random()*200);
+            for (int j=0;j<=i && repetido==false;j++){
+                if (variable==valores[j]){
+                   repetido=true;
+                }
+            }
+                if (!repetido){
+                    valores[i]=variable;
+                    System.out.print(valores[i]+ ", ");
+                }else{
+                    repetido=false;
+                    i--;
+                }
+        }
+
+    }
+
+    /*  Dado un array de números enteros, generar a partir de él un nuevo array donde se
+almacenen los elementos del primero que sean primos. */
+
+    public static void generarPrimos(){
+
+        int [] array=new int[introducirElementos()];
+
+        for (int i=0;i< array.length;i++){
+
+        }
+
+    }
+/* A partir de un array generar otro con los elementos al revés.*/
+
+    public static void invertirArray(int[] array){
+
+        System.out.print("Los valores iniciales del array son los siguientes: "+ Arrays.toString(array) +", "+
+                System.lineSeparator());
+        System.out.println("los valores invertidos son: ");
+        for (int i= array.length-1;i>=0;i--){
+            int valor=array[i];
+            System.out.print(valor+ ", ");
+        }
+    }
+        /* Funcionalidad que reciba un array de enteros y un número y devuelva la posición en la que
+        lo encuentre y -1 si el número no está en el array. En el array no puede haber números
+        repetidos.*/
+
+        public static int localizarNumero(int [] array, int num){
+
+            boolean encontrado=false;
+            int numero=-1;
+            System.out.println("El array esta compuesto de: " + Arrays.toString(array));
+
+            for (int i=0;i< array.length;i++){
+
+                if (array[i]==num){
+                    encontrado=true;
+                    numero=array[i];
+                }
+            }
+
+
+             return numero;
+        }
+
+}
