@@ -5,8 +5,7 @@ public class Boletin8_Ejercicio1 {
 Ejercicio 1.- Implementa una clase de utilidad donde se contemplen funcionalidades como:
 
 
- Dado un array de números enteros, generar a partir de él un nuevo array donde se
-almacenen los elementos del primero que sean primos.
+
  A partir de un array generar otro con los elementos al revés.
  Funcionalidad que reciba un array de enteros y un número y devuelva la posición en la que
 lo encuentre y -1 si el número no está en el array. En el array no puede haber números
@@ -48,7 +47,7 @@ elementos pares que se encuentran en el primero.
 forma que no se repita ningún elemento.
  */
 
-        int [] array2=new int[10];
+        int [] array2=new int[20];
         int variable=0;
         boolean repetido=false;
 
@@ -58,7 +57,7 @@ forma que no se repita ningún elemento.
          */
 
         for (int i=0;i<array2.length;i++){
-            variable=(int)(1+Math.random()*10);
+            variable=(int)(100+Math.random()*200);
 /**
  * para j=0, mientras que sea menor o igual a i, es decir la posicion que ocupa la 'i' en el array
  *  aumentamos */
@@ -81,7 +80,10 @@ forma que no se repita ningún elemento.
                 i--;}
             }
 
-
+/*
+ Dado un array de números enteros, generar a partir de él un nuevo array donde se
+almacenen los elementos del primero que sean primos.
+ */
 
 
     }
