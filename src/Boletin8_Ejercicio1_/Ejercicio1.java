@@ -42,7 +42,7 @@ averiguar como no almacenar los impares como 0
              return valores;
     }*/
 
-    public static void devolverPares(int [] array, int [] array2) {
+    public static void devolverPares(int[] array, int[] array2) {
 
         int contador=0, j=0;
        // System.out.println("Los numeros aleatorios son: "+Arrays.toString(array)+ ", ");
