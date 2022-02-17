@@ -85,7 +85,7 @@ averiguar como no almacenar los impares como 0
                     i--;
                 }
         }
-
+          System.out.println(System.lineSeparator());
     }
 
     /*  Dado un array de números enteros, generar a partir de él un nuevo array donde se

@@ -10,6 +10,10 @@ public class Menu_Boletin8_Ejercicio1 {
      public static String leerDato(){
          return sc.next();
      }
+     public static int leerOpcion(){
+
+         return sc.nextInt();
+    }
 
      public static void pintarMenu(){
 
@@ -49,6 +53,24 @@ public class Menu_Boletin8_Ejercicio1 {
 
                     System.out.println(Arrays.toString(array2));
                 break;
+                case "2":
+                    Ejercicio1.crearArray20();
+                    break;
+                case"3":
+                    int[] array3=Ejercicio1.crearRandom();
+                    int[] array2_3=new int[array3.length];
+                    Ejercicio1.generarPrimos(array3,array2_3);
+                    break;
+                case "4":
+                    int[] array4=Ejercicio1.crearRandom();
+                    Ejercicio1.invertirArray(array4);
+                    break;
+                case "5":
+                    int[] array5=Ejercicio1.crearRandom();
+                    System.out.println(Ejercicio1.localizarNumero(array5,leerOpcion());
+                    break;
+                case "0":
+                    salirMenu=true;
             }
         }while (!salirMenu);
 
