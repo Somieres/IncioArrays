@@ -47,10 +47,7 @@ public class Menu_Boletin8_Ejercicio1 {
 
                 case "1":
                     int[] array=Ejercicio1.crearRandom();
-                    int[] array2=new int[array.length];
-
-                    Ejercicio1.devolverPares(array, array2);
-
+                    int[] array2=Ejercicio1.devolverPares(array);
                     System.out.println(Arrays.toString(array2));
                 break;
                 case "2":
@@ -67,7 +64,8 @@ public class Menu_Boletin8_Ejercicio1 {
                     break;
                 case "5":
                     int[] array5=Ejercicio1.crearRandom();
-                    System.out.println(Ejercicio1.localizarNumero(array5,leerOpcion());
+                    System.out.println("¿Que numero desea saber si esta dentro del array?");
+                    System.out.println(Ejercicio1.localizarNumero(array5,leerOpcion()));
                     break;
                 case "0":
                     salirMenu=true;
